@@ -16,6 +16,9 @@ Calliope AI is a powerful Jupyter magic extension that enables natural language 
 
 ## 🚀 Quick Start
 
+### 📑 NEW! Start Here → `00-INDEX-Calliope-Examples.ipynb`
+**Complete navigation guide** to all 28+ notebooks with learning paths, quick reference, and examples!
+
 ### Installation
 ```bash
 pip install jupyter-ai calliope-magic
@@ -377,6 +380,14 @@ This repository contains example notebooks for educational purposes.
 
 This repository also contains other Jupyter AI examples:
 
+### 🎨 NEW! **AI-Visualization-Showcase.ipynb**
+**Featured notebook** demonstrating how to create stunning visualizations with natural language!
+- 10+ examples comparing different AI models
+- Interactive Plotly charts, 3D plots, animations
+- Real-world data analysis patterns
+- Model comparison guide
+
+### Classic Visualization Examples:
 - **MathPlotLib.ipynb** - Visualization examples with matplotlib
 - **TextGeneration.ipynb** - AI text generation examples
 - **SeabornVizDemo.ipynb** - Statistical visualizations
@@ -388,9 +399,15 @@ This repository also contains other Jupyter AI examples:
 
 ## 🚀 Getting Started Checklist
 
+### 🆕 Best Way to Start (Recommended!)
+- [ ] Open **`00-INDEX-Calliope-Examples.ipynb`** - Master navigation guide
+- [ ] Choose your learning path based on your role
+- [ ] Follow the structured tutorial sequence
+- [ ] 🎉 You're on your way!
+
 ### Quick Start (No Setup!)
 - [ ] Verify API is running: `curl http://localhost:5000/api/datasources`
-- [ ] Open `Calliope-RealData-Sakila.ipynb`
+- [ ] Open `Datasource-Sakila.ipynb` (formerly Calliope-RealData-Sakila)
 - [ ] Run your first cell to verify connection
 - [ ] Execute a natural language query
 - [ ] 🎉 You're analyzing data with AI!
@@ -400,6 +417,7 @@ This repository also contains other Jupyter AI examples:
 - [ ] Set up API keys for your chosen AI provider
 - [ ] Try real datasource notebooks first
 - [ ] Then open `Calliope-GettingStarted.ipynb` to learn database setup
+- [ ] Check out `AI-Visualization-Showcase.ipynb` for viz inspiration
 - [ ] Explore advanced features in other notebooks
 - [ ] Connect your own databases
 - [ ] Build something amazing!

@@ -1,15 +1,16 @@
 # ✅ Ready to Test!
 
-## 🎉 All Notebooks Updated and Ready
+## 🎉 Calliope Magic Command Implementation
 
-All **8 Calliope notebooks** now have the API configuration cell added at the top!
+**IMPORTANT UPDATE**: The `%%calliope` magic command has been implemented as a custom IPython extension!
 
 ### ✅ What Was Done
 
-1. **Added configuration cells** to all datasource notebooks
-2. **Added configuration cells** to feature showcase notebooks
+1. **Created calliope_magic.py** - IPython extension that implements `%%calliope` commands
+2. **Added extension loading** to all notebooks
 3. **Verified all 6 datasources** have dedicated notebooks
-4. **Pre-wired Jupyter config** for future sessions
+4. **Created Test-Calliope-Magic.ipynb** - Test all magic commands
+5. **Pre-wired Jupyter config** for future sessions
 
 ### 📊 Datasource Notebooks (6 total)
 
@@ -33,28 +34,65 @@ Each notebook is dedicated to ONE datasource with 20-35 example queries:
 
 ## 🚀 How to Test
 
-### Quick Test (Pick Any Notebook)
+### Quick Start - Test the Magic Command First!
 
-1. **Open a notebook**:
+1. **Start with the test notebook**:
    ```bash
-   jupyter notebook Datasource-Sakila.ipynb
+   jupyter notebook Test-Calliope-Magic.ipynb
    ```
 
-2. **Run the first 2 cells**:
-   - Cell 1 (Markdown): Introduction
-   - Cell 2 (Config): Sets `CALLIOPE_API_BASE_URL`
-   ```python
-   import os
-   os.environ['CALLIOPE_API_BASE_URL'] = 'http://localhost:5000'
-   ```
+2. **Run the first 3 cells**:
+   - Cell 1: Loads the `calliope_magic` extension
+   - Cell 2: Sets `CALLIOPE_API_BASE_URL`
+   - Cell 3: Verifies connection to Data Agent
 
-3. **Run a query cell**:
+3. **Run any test cell**:
    ```python
    %%calliope run-sql sakila
-   SHOW TABLES
+   SELECT * FROM film LIMIT 5
    ```
 
 Should work immediately! ✅
+
+### How the Magic Command Works
+
+The `%%calliope` magic command supports 3 subcommands:
+
+1. **ask-sql** - Natural language to SQL + execution:
+   ```python
+   %%calliope ask-sql <datasource> [--sql-model MODEL] [--to-ai] [--model MODEL]
+   What are the top 10 customers by total spend?
+   ```
+
+2. **run-sql** - Execute SQL directly:
+   ```python
+   %%calliope run-sql <datasource> [--format table|json|csv]
+   SELECT * FROM customers LIMIT 10
+   ```
+
+3. **generate-sql** - Generate SQL without executing:
+   ```python
+   %%calliope generate-sql <datasource> [--sql-model MODEL]
+   Create a query to find top customers
+   ```
+
+### Load the Extension in Any Notebook
+
+Add these cells at the beginning of any notebook:
+
+```python
+# Cell 1: Load the calliope magic extension
+import sys
+sys.path.insert(0, '/mnt/efs/users/lmata/lab/aidemorepo')
+%load_ext calliope_magic
+```
+
+```python
+# Cell 2: Configure the API endpoint
+import os
+os.environ['CALLIOPE_API_BASE_URL'] = 'http://localhost:5000'
+print(f"✅ Calliope API configured")
+```
 
 ### Test Each Datasource
 
