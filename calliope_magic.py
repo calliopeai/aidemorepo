@@ -183,11 +183,17 @@ class CalliopeMagics(Magics):
                     analysis_data = {
                         'question': query,
                         'sql': result.get('sql', ''),
-                        'results': result['data'],
+                        'data': result['data'][:100],  # Limit to first 100 rows for analysis
                         'model': args.model
                     }
-                    # TODO: Implement AI analysis endpoint
-                    display(Markdown(f"*AI analysis requested with model: {args.model}*"))
+                    try:
+                        analysis_result = self.make_request('/api/analyze', analysis_data)
+                        if 'analysis' in analysis_result:
+                            display(Markdown(f"### AI Analysis\n\n{analysis_result['analysis']}"))
+                        else:
+                            display(Markdown(f"*Analysis completed with model: {args.model}*"))
+                    except Exception as e:
+                        display(Markdown(f"*AI analysis unavailable: {str(e)}*"))
 
             elif subcommand == 'run-sql':
                 endpoint = '/api/sql/run_sql'

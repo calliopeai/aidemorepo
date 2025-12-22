@@ -9,7 +9,7 @@ The following sample databases are available and ready to use:
 ### 1. 🎬 Sakila (MySQL)
 **Datasource ID**: `sakila`
 **Type**: DVD Rental Store
-**Notebook**: `Calliope-RealData-Sakila.ipynb`
+**Notebook**: `05-Database/datasources/06-sakila.ipynb`
 
 **Contains**:
 - Films, actors, and categories
@@ -25,7 +25,7 @@ The following sample databases are available and ready to use:
 ### 2. 🎵 Chinook (PostgreSQL)
 **Datasource ID**: `chinook`
 **Type**: Digital Music Store
-**Notebook**: `Calliope-RealData-Chinook.ipynb`
+**Notebook**: `05-Database/datasources/05-chinook.ipynb`
 
 **Contains**:
 - Artists, albums, and tracks
@@ -41,7 +41,7 @@ The following sample databases are available and ready to use:
 ### 3. 📦 Northwind (PostgreSQL)
 **Datasource ID**: `northwind`
 **Type**: Import/Export Business
-**Notebook**: `Calliope-RealData-Northwind.ipynb`
+**Notebook**: `05-Database/datasources/02-northwind.ipynb`
 
 **Contains**:
 - Products and categories
@@ -57,7 +57,7 @@ The following sample databases are available and ready to use:
 ### 4. 👔 Employees (MySQL)
 **Datasource ID**: `employees`
 **Type**: HR Database
-**Notebook**: Coming soon!
+**Notebook**: `05-Database/datasources/01-employees.ipynb`
 
 **Contains**:
 - Employee records
@@ -72,7 +72,7 @@ The following sample databases are available and ready to use:
 ### 5. 🌍 World (MySQL)
 **Datasource ID**: `world`
 **Type**: Geographic Data
-**Notebook**: Coming soon!
+**Notebook**: `05-Database/datasources/03-world.ipynb`
 
 **Contains**:
 - Countries and cities
@@ -87,7 +87,7 @@ The following sample databases are available and ready to use:
 ### 6. ✈️ AirportDB (MySQL)
 **Datasource ID**: `airportdb`
 **Type**: Airport Operations
-**Notebook**: Coming soon!
+**Notebook**: `05-Database/datasources/04-airportdb.ipynb`
 
 **Contains**:
 - Flight information
@@ -214,13 +214,13 @@ The system automatically:
 ## 🎓 Learning Path with Real Data
 
 ### Beginner
-1. Start with `Calliope-GettingStarted.ipynb` (uses SQLite)
-2. Move to `Calliope-RealData-Sakila.ipynb` (simple retail data)
+1. Start with `00-Getting-Started/01-getting-started.ipynb` (uses SQLite)
+2. Move to `05-Database/datasources/06-sakila.ipynb` (simple retail data)
 3. Try basic queries on all datasources
 
 ### Intermediate
-1. Explore `Calliope-RealData-Chinook.ipynb` (more complex relationships)
-2. Work through `Calliope-RealData-Northwind.ipynb` (business operations)
+1. Explore `05-Database/datasources/05-chinook.ipynb` (more complex relationships)
+2. Work through `05-Database/datasources/02-northwind.ipynb` (business operations)
 3. Practice complex joins and aggregations
 
 ### Advanced
@@ -309,4 +309,4 @@ print(response.json())
 
 ---
 
-**Ready to start?** Open `Calliope-RealData-Sakila.ipynb` and run your first query! 🚀
+**Ready to start?** Open `05-Database/datasources/06-sakila.ipynb` and run your first query!
