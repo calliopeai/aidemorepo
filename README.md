@@ -1,8 +1,10 @@
 # Calliope AI Lab - JupyterLab AI Demo Repository
 
-A comprehensive collection of 55+ Jupyter notebooks demonstrating AI-powered data analysis, natural language database queries, and AI-assisted development using Calliope AI and Jupyter AI.
+A comprehensive collection of 100+ Jupyter notebooks demonstrating AI-powered data analysis, natural language database queries, and AI-assisted development using Calliope AI and Jupyter AI.
 
-**55+ Notebooks | 6 Pre-configured Databases | 15 Categories | Multiple AI Models**
+**100+ Notebooks | 6 Pre-configured Databases | 15 Categories | Multiple AI Models**
+
+**Everything is pre-installed and ready to use!**
 
 ---
 
@@ -22,8 +24,10 @@ Calliope AI is a powerful Jupyter magic extension that enables natural language 
 
 ## Quick Start
 
+**No installation needed - everything is pre-configured!**
+
 ### Start Here: `00-INDEX-Calliope-Examples.ipynb`
-Complete navigation guide with learning paths, quick reference, and all 55+ notebooks!
+Complete navigation guide with learning paths, quick reference, and all 100+ notebooks!
 
 ### 5-Minute Quick Start
 1. Open `05-Database/datasources/Datasource-Sakila.ipynb`
@@ -53,10 +57,7 @@ Calliope-AI-Lab-Demo/
 ├── 12-Time-Series/          # Forecasting, anomaly detection
 ├── 13-NLP/                  # Text generation, sentiment
 ├── 14-Advanced/             # Complex examples
-├── 15-Reference/            # Documentation, API guides
-└── CalliopeLabExamples/     # Additional real-world examples
-    ├── AI-Data-Analysis/    # 15 advanced analysis notebooks
-    └── InfoSec/             # Penetration testing
+└── 15-Reference/            # Documentation, API guides
 ```
 
 ---
@@ -86,6 +87,8 @@ Explain SQL window functions
 
 ## Pre-configured Databases
 
+All databases are already connected and ready to query - just open a notebook and start!
+
 | Database | Type | Tables | Use Case |
 |----------|------|--------|----------|
 | Sakila | MySQL | film, customer, rental, payment | Retail, inventory |
@@ -95,7 +98,10 @@ Explain SQL window functions
 | World | MySQL | country, city, countrylanguage | Geography, demographics |
 | AirportDB | MySQL | flights, airports, airlines | Transportation, logistics |
 
-**No setup required!** These databases are pre-configured and ready to use.
+```python
+# Just run this in any notebook:
+%calliope -d sakila "Show me the top 10 customers by revenue"
+```
 
 ---
 
@@ -150,6 +156,8 @@ Explain SQL window functions
 
 ## Available Data
 
+All datasets are pre-loaded and ready for analysis!
+
 ### CSV Datasets (~/lab/data/CSVs/)
 | Dataset | Size | Use Case |
 |---------|------|----------|
@@ -161,12 +169,16 @@ Explain SQL window functions
 | Baby_Names | 2.7MB | Trend analysis |
 | Diabetes | 16KB | ML classification |
 
+See `02-Data-Exploration/csv-datasources/` for ready-to-run analysis notebooks for each dataset.
+
 ### PDF Documents (~/lab/data/PDFs/)
 - Google Borg, Autopilot papers
 - O'Reilly Observability Engineering
 - SRE Incident Metrics
 - Control Systems Theory
 - ML Exercises
+
+See `04-RAG-Documents/` for Q&A notebooks for each PDF.
 
 ---
 
@@ -182,11 +194,19 @@ Explain SQL window functions
 
 ---
 
-## Installation
+## Configuration
 
-```bash
-pip install jupyter-ai calliope-magic
+All tools are pre-installed. You only need to configure your API keys if using external providers:
+
+```python
+# Set in your environment or notebook
+import os
+os.environ["ANTHROPIC_API_KEY"] = "your-key"  # For Claude models
+os.environ["OPENAI_API_KEY"] = "your-key"     # For GPT models
+os.environ["GOOGLE_API_KEY"] = "your-key"     # For Gemini models
 ```
+
+Or use the built-in Calliope models which require no additional configuration.
 
 ---
 
