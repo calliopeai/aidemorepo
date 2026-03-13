@@ -10,7 +10,7 @@ A comprehensive collection of 100+ Jupyter notebooks demonstrating AI-powered da
 
 ## What is Calliope AI?
 
-Calliope AI is a powerful Jupyter magic extension that enables natural language database queries with automatic SQL generation, execution, and visualization. It wraps and extends Jupyter AI, giving you access to multiple AI providers while specializing in database operations.
+Calliope AI is a powerful Jupyter extension that enables natural language database queries with automatic SQL generation, execution, and visualization. It wraps and extends Jupyter AI, giving you access to multiple AI providers while specializing in database operations.
 
 ### Key Features
 - **Natural Language SQL**: Ask questions in plain English, get SQL + results + charts
@@ -29,11 +29,6 @@ Calliope AI is a powerful Jupyter magic extension that enables natural language 
 ### Start Here: `00-INDEX-Calliope-Examples.ipynb`
 Complete navigation guide with learning paths, quick reference, and all 100+ notebooks!
 
-### 5-Minute Quick Start
-1. Open `05-Database/datasources/Datasource-Sakila.ipynb`
-2. Run the first query cell
-3. You're analyzing data with AI!
-
 ---
 
 ## Repository Structure
@@ -46,8 +41,6 @@ Calliope-AI-Lab-Demo/
 ├── 02-Data-Exploration/     # EDA, profiling, data cleaning
 ├── 03-Visualization/        # Matplotlib, Seaborn, Plotly, dashboards
 ├── 04-RAG-Documents/        # PDF Q&A, semantic search
-├── 05-Database/             # SQL generation, datasources
-│   └── datasources/         # Sakila, Chinook, Employees, etc.
 ├── 06-AI-ML/                # Classification, forecasting, ML
 ├── 07-DevOps/               # Infrastructure, monitoring
 ├── 08-InfoSec/              # Security analysis, log analysis
@@ -73,9 +66,6 @@ CLAUDE_FAST = "anthropic-chat:claude-haiku-4-5-20251001"
 GPT = "openai-chat:gpt-5"
 GEMINI = "gemini:gemini-2.5-flash"
 
-# Usage with Calliope
-%calliope -d sakila --sql-model $CLAUDE "Show top customers"
-
 # Usage with Jupyter AI
 %%ai $CLAUDE
 Explain SQL window functions
@@ -98,53 +88,35 @@ All databases are already connected and ready to query - just open a notebook an
 | World | MySQL | country, city, countrylanguage | Geography, demographics |
 | AirportDB | MySQL | flights, airports, airlines | Transportation, logistics |
 
-```python
-# Just run this in any notebook:
-%calliope -d sakila "Show me the top 10 customers by revenue"
-```
-
 ---
 
 ## Learning Paths
 
 ### Path 1: Data Analyst
 1. `00-Getting-Started/00-model-config.ipynb`
-2. `05-Database/datasources/Datasource-Sakila.ipynb`
-3. `03-Visualization/Calliope-Visualizations.ipynb`
-4. `05-Database/Calliope-AdvancedQueries.ipynb`
+2. `03-Visualization/Calliope-Visualizations.ipynb`
+3. `02-Data-Exploration/02-mva-vehicle-sales-advanced.ipynb`
 
 ### Path 2: Data Scientist
 1. `00-Getting-Started/00-model-config.ipynb`
-2. `02-Data-Exploration/CSV_Column_Normalizer.ipynb`
+2. `02-Data-Exploration/06-csv-column-normalizer.ipynb`
 3. `06-AI-ML/01-classification-diabetes.ipynb`
 4. `12-Time-Series/01-forecasting-sales.ipynb`
 
 ### Path 3: Developer
 1. `00-Getting-Started/00-model-config.ipynb`
 2. `01-Code-Generation/01-ai-code-assistant.ipynb`
-3. `05-Database/Calliope-DirectSQL.ipynb`
-4. `04-RAG-Documents/Calliope-RAGTraining.ipynb`
+3. `04-RAG-Documents/00-rag-training.ipynb`
 
 ### Path 4: Cloud/DevOps
 1. `00-Getting-Started/00-model-config.ipynb`
 2. `09-FinOps-Cloud/01-aws-cost-analysis.ipynb`
 3. `08-InfoSec/01-security-analysis.ipynb`
-4. `07-DevOps/Dual Webservice with Graphing.ipynb`
+4. `07-DevOps/06-dual-webservice-graphing.ipynb`
 
 ---
 
 ## Quick Reference
-
-### Calliope Commands
-```python
-%calliope                         # Show help
-%calliope list                    # List datasources
-%calliope list-models             # List AI models
-%calliope -d sakila "query"       # Natural language query
-%calliope -d sakila schema        # Show database schema
-%calliope -d sakila --sql-model $MODEL "query"  # Specify model
-%calliope -d sakila --to-ai $MODEL "query"      # Get AI analysis
-```
 
 ### Jupyter AI Magic
 ```python
